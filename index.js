@@ -5,7 +5,7 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 
-const generateHTML = require('./src/generateHTML')
+const genHTML = require('./src/genHTML')
 
 let employees = [];
 
@@ -76,7 +76,7 @@ function askAgain() {
         if (answer.again === "yes") {
             init();
         } else {
-         let employeeRoster = generateHTML(employees);
+         let employeeRoster = genHTML(employees);
          fs.writeFile('index.html', employeeRoster, (err) => {
           if (err)
           console.log('err');
