@@ -1,0 +1,20 @@
+Next: Line 80, index.js - Need to write code to generate HTML file containing employee info
+
+Help me understand HOW the answers get passed into the param below.
+
+// init function writes input to README.md file
+function init() {
+  inquirer
+  .prompt(questions)
+  .then((answers) => {
+    let readmeContent = generateMarkdown(answers)
+    fs.writeFile('README.md', readmeContent, (err) => {
+      if (err) 
+      console.log(err)
+      else 
+        console.log('README.md written successfully!');
+    })
+  })
+}
+
+How do I get my package.json file?

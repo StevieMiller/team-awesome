@@ -1,11 +1,9 @@
-const generateHTML = (employeeArray) => {
-  console.log(employeeArray);
-  const HTML = [];
-  const addManager = manager => {
-    let managerHTML = `
-    // Write HTML here
-    `;
-    HTML.push(managerHTML)
-  }
-  
+
+
+function generateHTML(employees) {
+  return `<h1>hello world</h1>
+  <p>Manager name: ${employees.name}`
 }
+
+
+module.exports = generateHTML;
