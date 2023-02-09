@@ -1,0 +1,20 @@
+:root {
+  --bkg1: #82a6b1;
+  --bkg2: #C0D2D8;
+  --font: #003049;
+}
+
+body {
+  background-color: var(--bkg2);
+  color: var(--font)
+}
+
+.header {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--font);
+  background-color: var(--bkg1)
+}
+
+.card {
+  background-color: var(--bkg1)
+}

@@ -1,42 +1,48 @@
+const genHTML = (employees) => {
+  console.log(employees);
+const html = [];
 
-
-const genHTML = (team) => {
-  console.log(team);
-
-// Function to hold all meta data at the top of the page
-// Two big functions
-// This (genHTML) will be the layout
-// ${genTEAM(team)} <-- this is how I will pull the team data into the template literal to be rendered to the HTML page
-
-
-
-const genTEAM = () => {
-// Create a function for each card. Ex: genEMP, genENG, genINT
-// Generate a card that brings in data
-// One for each role
+const genMGR = (manager) => {
+  let mgrHTML = `
+  <p>Manager: ${manager.name}</p>
+  <p>ID: ${manager.id}</p>
+  <p>Email: <a href="mailto:${manager.email}">${manager.email}</a></p>  
+  <p>Number: ${manager.officeNum}</p>
+  `;
+  html.push(mgrHTML)
 }
 
-const genMAN = () => {
-
+const genENG = (engineer) => {
+  let engHTML = `
+  <p>Engineer: ${engineer.name}</p>
+  <p>ID: ${engineer.id}</p>
+  <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p> 
+  <p>Github: <a target="_blank" href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+  `; 
+  html.push(engHTML);
 }
 
-const genENG = () => {
+const genINT = (intern) => {
+  let intHTML = `
+  
+  <p>Intern: ${intern.name}</p>
+  <p>ID: ${intern.id}</p>
+  <p>Email: <a href="mailto:${intern.email}">${intern.email}</a></p> 
+  <p>School: ${intern.school}</p>
+  `;
+  html.push(intHTML);
+};
 
+for (i = 0; i < employees.length; i++) {
+  if (employees[i].getRole() === "Manager") {
+      genMGR(employees[i])
+  } else if (employees[i].getRole() === "Engineer") {
+      genENG(employees[i])
+  } else if (employees[i].getRole() === "Intern") {
+      genINT(employees[i])
+  }
 }
-
-const genINT = () => {
-
+return html.join('');
 }
-}
-
-// function genHTML(employees) {
-//   return `<h1>hello world</h1>
-//   <p>Name: ${employees[0].name}<p>
-//   <p>Role: ${employees[0].getRole()}<p>
-//   <p>ID: ${employees[0].id}<p>
-//   <p>Email: ${employees[0].email}<p>
-//   <p>Office Number: ${employees[0].officeNum}<p>
-//   `
-// }
 
 module.exports = genHTML;
