@@ -6,15 +6,17 @@
 
 body {
   background-color: var(--bkg2);
-  color: var(--font)
+  color: var(--font);
 }
 
 .header {
   font-family: 'Courier New', Courier, monospace;
   color: var(--font);
-  background-color: var(--bkg1)
+  background-color: var(--bkg1);
+  padding: 50px;
 }
 
 .card {
-  background-color: var(--bkg1)
+  background-color: var(--bkg1);
+  margin-top: 50px;
 }
